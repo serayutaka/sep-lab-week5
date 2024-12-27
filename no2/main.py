@@ -51,3 +51,6 @@ for travel in trip:
    travel_cost += travel.find_cost()
    
 print(travel_cost)
+
+#something1
+#something2
