@@ -7,7 +7,9 @@ class Simple_drawing_window(QWidget):
     def __init__(self):
         QWidget.__init__(self,None)
         self.setWindowTitle("Simple GitHub Drawing")
-        self.rabbit = QPixmap("no1/images/shronk.png")
+        self.setMinimumSize(1920, 1080)
+        self.rabbit = QPixmap("images/shronk.png")
+        self.gordon = QPixmap("images/gordon_meme.jpg")
 
     def paintEvent(self, e):
         p = QPainter()
@@ -25,7 +27,8 @@ class Simple_drawing_window(QWidget):
         p.drawPie(50,150,100,100,0,180*16)
 
         p.drawPolygon([QPoint(50,200),QPoint(150,200),QPoint(100,400)])
-        p.drawPixmap(QRect(200,100,320,320), self.rabbit)
+        p.drawPixmap(QRect(600,100,320,320), self.rabbit)
+        p.drawPixmap(QRect(200,100,320,320), self.gordon)
         p.end()
 
 if __name__ == "__main__":
