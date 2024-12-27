@@ -51,6 +51,38 @@ class Disk(object):
         t.fd(self.dwidth / 2)
         t.end_fill()
 
+class Pole():
+    def __init__(self, n="", x=0, y=0, width=10, height=100):
+        self.name = n
+        self.x = x
+        self.y = y
+        self.width = width
+        self.height = height
+        self.stack = []
+        self.top = 0
+
+    def show_pole(self):
+        t.goto(self.x, self.y)
+        t.pendown()
+        t.forward(self.width)
+        t.left(90)
+        t.forward(self.height)
+        t.left(90)
+        t.forward(self.width)
+        t.left(90)
+        t.forward(self.height)
+        t.left(90)
+        t.penup()
+
+    def push_disk(self, disk):
+        self.stack.append(disk)
+        disk.newpos(self.x + self.width / 2, self.y + disk.dheight * len(self.stack))
+        disk.showdisk()
+
+    def pop_disk(self):
+        disk = self.stack.pop()
+        disk.cleardisk()
+
 d = Disk()
 d.showdisk()
 d.cleardisk()
