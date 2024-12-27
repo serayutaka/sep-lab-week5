@@ -3,7 +3,7 @@ from PySide6.QtCore import *
 from PySide6.QtWidgets import *
 from PySide6.QtGui import *
 
-class Simple_drawing_window(QWidget):
+class Simple_drawing_window1(QWidget):
     def __init__(self):
         QWidget.__init__(self,None)
         self.setWindowTitle("Simple GitHub Drawing")
@@ -31,8 +31,14 @@ class Simple_drawing_window(QWidget):
         p.drawPixmap(QRect(200,100,320,320), self.gordon)
         p.end()
 
+class Simple_drawing_window2(QWidget):
+    print("veesus")
+
+class Simple_drawing_window3(QWidget):
+    print("veesus")
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    w = Simple_drawing_window()
+    w = Simple_drawing_window1()
     w.show()
     sys.exit(app.exec())
