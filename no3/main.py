@@ -83,6 +83,8 @@ class Pole():
 
     def pop_disk(self):
         disk = self.stack.pop()
+        t.penup()
+        t.goto(self.x, self.y + disk.dheight * len(self.stack))
         disk.cleardisk()
 
 p1 = Pole("p1", 20, 20)
@@ -90,5 +92,6 @@ p1.show_pole()
 p1.push_disk(Disk("d1",20,20))
 p1.push_disk(Disk("d2",20,20))
 p1.push_disk(Disk("d3",20,20))
+p1.pop_disk()
 
 t.done()
