@@ -62,6 +62,7 @@ class Pole():
         self.top = 0
 
     def show_pole(self):
+        t.penup()
         t.goto(self.x, self.y)
         t.pendown()
         t.forward(self.width / 2)
@@ -76,8 +77,8 @@ class Pole():
         t.penup()
 
     def push_disk(self, disk):
+        disk.newpos(self.x, self.y + disk.dheight * len(self.stack))
         self.stack.append(disk)
-        disk.newpos(self.x + self.width / 2, self.y + disk.dheight * len(self.stack))
         disk.showdisk()
 
     def pop_disk(self):
@@ -86,8 +87,8 @@ class Pole():
 
 p1 = Pole("p1", 20, 20)
 p1.show_pole()
-p1.push_disk(Disk(20,20))
-p1.push_disk(Disk(20,20))
-p1.push_disk(Disk(20,20))
+p1.push_disk(Disk("d1",20,20))
+p1.push_disk(Disk("d2",20,20))
+p1.push_disk(Disk("d3",20,20))
 
 t.done()
