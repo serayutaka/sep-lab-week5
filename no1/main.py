@@ -8,8 +8,8 @@ class Simple_drawing_window(QWidget):
         QWidget.__init__(self,None)
         self.setWindowTitle("Simple GitHub Drawing")
         self.setMinimumSize(1920, 1080)
-        self.rabbit = QPixmap("images/shronk.png")
-        self.gordon = QPixmap("images/gordon_meme.jpg")
+        self.rabbit = QPixmap("no1/images/shronk.png")
+        self.gordon = QPixmap("no1/images/gordon_meme.jpg")
 
     def paintEvent(self, e):
         p = QPainter()
